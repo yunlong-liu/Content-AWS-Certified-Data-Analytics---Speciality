@@ -26,7 +26,7 @@ def add_part(proc_queue, body, bucket, key, part_number, upload_id):
         UploadId = upload_id
     )
 
-    print(f'Finished Part: {part_number}, ETag: {response['ETag']}')
+    print(f"Finished Part: {part_number}, ETag: {response['ETag']}")
     proc_queue.put({'PartNumber': part_number, 'ETag': response['ETag']})
     return
 
